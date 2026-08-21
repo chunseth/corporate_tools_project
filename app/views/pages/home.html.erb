@@ -2,10 +2,13 @@
 
 <section>
     <h2>Ticket Summary</h2>
-
-    <p>Open: <%= @open_tickets %></p>
-    <p>In progress: <%= @in_progress_tickets %></p>
-    <p>Completed: <%= @completed_tickets %></p>
+    <div class="ticket-summary">
+        <div class="ticket-summary-content">
+            <p>Open: <%= @open_tickets %></p>
+            <p>In progress: <%= @in_progress_tickets %></p>
+            <p>Completed: <%= @completed_tickets %></p>
+        </div>
+    </div>
 </section>
 
 <h2>Recent Tickets</h2>
@@ -19,12 +22,18 @@
 <% end %>
 
 <% if @tickets.any? %>
-    <ul>
+    <ul class="ticket-list">
         <% @tickets.each do |ticket| %>
-            <li>
-                <strong><%= link_to ticket.title, ticket_path(ticket) %></strong>
-                - <%= ticket.status %>
-                - <%= ticket.priority %>
+            <li class="ticket-card">
+                <div>
+                    <strong><%= link_to ticket.title, ticket_path(ticket) %></strong>
+                    <p><%= ticket.description %></p>
+                </div>
+
+                <div class="ticket-meta">
+                    <span><%= ticket.status %></span>
+                    <span><%= ticket.priority %></span>
+                </div>
             </li>
         <% end %>
     </ul>
