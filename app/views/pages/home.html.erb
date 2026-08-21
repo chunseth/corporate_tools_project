@@ -1,5 +1,13 @@
 <h1>Corporate Tools Dashboard</h1>
 
+<section>
+    <h2>Ticket Summary</h2>
+
+    <p>Open: <%= @open_tickets %></p>
+    <p>In progress: <%= @in_progress_tickets %></p>
+    <p>Completed: <%= @completed_tickets %></p>
+</section>
+
 <h2>Recent Tickets</h2>
 
 <% if @tickets.any? %>
