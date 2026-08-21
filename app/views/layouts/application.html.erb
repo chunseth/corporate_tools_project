@@ -24,17 +24,25 @@
   </head>
 
   <body>
-    <% flash.each do |type, message| %>
-      <div>
-        <%= message %>
-      </div>
-    <% end %>
-
-    <nav>
-      <%= link_to "Dashboard", root_path %>
-      <%= link_to "New Ticket", new_ticket_path %>
-    </nav>
+    <header class="site-header">
+      <nav class="nav-container">
+        <%= link_to "Corporate Tools", root_path, class: "brand" %>
+        
+        <div class="nav-links">
+          <%= link_to "Dashboard", root_path %>
+          <%= link_to "New Ticket", new_ticket_path, class: "button button-primary" %>
+        </div>  
+      </nav>
+    </header>
     
-    <%= yield %>
+    <main class="page-container">
+      <% flash.each do |type, message| %>
+        <div>
+          <%= message %>
+        </div>
+      <% end %>
+      
+      <%= yield %>
+    </main>
   </body>
 </html>
