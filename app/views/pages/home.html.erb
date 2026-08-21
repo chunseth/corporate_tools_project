@@ -10,6 +10,14 @@
 
 <h2>Recent Tickets</h2>
 
+<%= form_with url: root_path, method: :get do |form| %>
+    <%= form.label :status, "Filter by status" %>
+
+    <%= form.select :status, [["All tickets", ""], ["Open", "open"], ["In progress", "in_progress"], ["Completed", "completed"]], selected: @status_filter %>
+
+    <%= form.submit "Filter" %>
+<% end %>
+
 <% if @tickets.any? %>
     <ul>
         <% @tickets.each do |ticket| %>
