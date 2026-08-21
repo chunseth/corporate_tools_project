@@ -1,0 +1,17 @@
+<h1>Corporate Tools Dashboard</h1>
+
+<h2>Recent Tickets</h2>
+
+<% if @tickets.any? %>
+    <ul>
+        <% @tickets.each do |ticket| %>
+            <li>
+                <strong><%= ticket.title %></strong>
+                - <%= ticket.status %>
+                - <%= ticket.priority %>
+            </li>
+        <% end %>
+    </ul>
+<% else %>
+    <p>No tickets yet.</p>
+<% end %>
