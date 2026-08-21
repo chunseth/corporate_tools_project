@@ -30,6 +30,11 @@
       </div>
     <% end %>
 
+    <nav>
+      <%= link_to "Dashboard", root_path %>
+      <%= link_to "New Ticket", new_ticket_path %>
+    </nav>
+    
     <%= yield %>
   </body>
 </html>

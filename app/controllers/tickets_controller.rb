@@ -2,7 +2,7 @@ class TicketsController < ApplicationController
   def new
     @ticket = Ticket.new(status: "open", priority: "medium")
   end
-  
+
   def create 
     @ticket = Ticket.new(ticket_params)
 
@@ -10,6 +10,24 @@ class TicketsController < ApplicationController
       redirect_to root_path, notice: "Ticket created successfully"
     else
       render :new, status: :unprocessable_entity
+    end
+  end
+
+  def show
+    @ticket = Ticket.find(params[:id])
+  end
+
+  def edit
+    @ticket = Ticket.find(params[:id])
+  end
+
+  def update
+    @ticket = Ticket.find(params[:id])
+
+    if @ticket.update(ticket_params)
+      redirect_to @ticket, notice: "Ticket updated successfully"
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 

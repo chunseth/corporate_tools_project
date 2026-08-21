@@ -12,26 +12,4 @@
     </div>
 <% end %>
 
-<%= form_with model: @ticket do |form| %>
-    <div> 
-        <%= form.label :title %>
-        <%= form.text_field :title %>
-    </div>
-
-    <div>
-        <%= form.label :description %>
-        <%= form.text_area :description %>
-    </div>
-
-    <div>
-        <%= form.label :status %>
-        <%= form.select :status, ["open", "in_progress", "completed"] %>
-    </div>
-
-    <div>
-        <%= form.label :priority %>
-        <%= form.select :priority, ["low", "medium", "high"] %>
-    </div>
-
-    <%= form.submit "Create Ticket" %>
-<% end %>
+<%= render "form" %>

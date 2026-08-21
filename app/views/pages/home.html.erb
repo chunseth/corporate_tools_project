@@ -6,7 +6,7 @@
     <ul>
         <% @tickets.each do |ticket| %>
             <li>
-                <strong><%= ticket.title %></strong>
+                <strong><%= link_to ticket.title, ticket_path(ticket) %></strong>
                 - <%= ticket.status %>
                 - <%= ticket.priority %>
             </li>
