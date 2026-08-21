@@ -1,5 +1,17 @@
 <h1>New Tickets</h1>
 
+<% if @ticket.errors.any? %>
+    <div> 
+        <h2><%= pluralize(@ticket.errors.count, "error") %> prevented this ticket from being saved:</h2>
+    
+        <ul>
+            <% @ticket.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+        </ul>
+    </div>
+<% end %>
+
 <%= form_with model: @ticket do |form| %>
     <div> 
         <%= form.label :title %>
@@ -20,4 +32,6 @@
         <%= form.label :priority %>
         <%= form.select :priority, ["low", "medium", "high"] %>
     </div>
+
+    <%= form.submit "Create Ticket" %>
 <% end %>
