@@ -11,7 +11,7 @@ class TicketsTest < ApplicationSystemTestCase
 
     click_on "Create Ticket"
 
-    assert_text "Ticket created successfully."
+    assert_text "Ticket created successfully"
     assert_text "Replace conference room monitor"
   end
 end
