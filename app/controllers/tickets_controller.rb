@@ -3,7 +3,7 @@ class TicketsController < ApplicationController
     @ticket = Ticket.new(status: "open", priority: "medium")
   end
 
-  def create 
+  def create
     @ticket = Ticket.new(ticket_params)
 
     if @ticket.save

@@ -4,7 +4,7 @@ class PagesController < ApplicationController
       @priority_filter = params[:priority]
 
       @tickets = Ticket.order(created_at: :desc)
-      
+
       if @status_filter.present?
         @tickets = @tickets.where(status: @status_filter)
       end
