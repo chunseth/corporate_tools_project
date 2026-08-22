@@ -10,7 +10,7 @@ class TicketTest < ActiveSupport::TestCase
 
     assert ticket.valid?
   end
-  
+
   test "is invalid without a title" do
     ticket = Ticket.new(
       status: "open",
