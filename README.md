@@ -1,5 +1,7 @@
 # README
 
+https://corporate-tools-project.onrender.com
+
 - Ruby version 3.4.10
 - Rails 8.1
 - PostgreSQL
@@ -14,7 +16,9 @@ A Rails internal ticket management tool for corporate operations teams.
 
 ## Overview
 
-Corporate Tools Project helps employees create, track, filter, and delete internal support requests.
+This Project helps employees create, track, filter, and delete internal support requests.
+I built this project while applying to Corporate Tools to
+demonstrate my ability to learn and work with Ruby on Rails.
 
 ## Features
 
@@ -73,3 +77,19 @@ bin/rubocop
 - Ticket assignment to employees
 - Due dates
 - Email notifications
+
+## What I'd build next
+
+A business compliance tracker for reports, renewals, tax filings
+
+- Obligations have due dates, status, notes, history
+
+## What I learned
+
+Ruby basics:
+
+- Syntax, loops, conditionals and applying them
+  Rails basics:
+- MVC system and handling each of them in an application
+  How to use Ruby on rails to CRUD tasks
+  Building tests in Rails
