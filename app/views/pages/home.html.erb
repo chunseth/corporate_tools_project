@@ -17,7 +17,13 @@
     <%= form.label :status, "Filter by status" %>
 
     <%= form.select :status, [["All tickets", ""], ["Open", "open"], ["In progress", "in_progress"], ["Completed", "completed"]], selected: @status_filter %>
+    <%= form.submit "Filter" %>
+<% end %>
 
+<%= form_with url: root_path, method: :get do |form| %>
+    <%= form.label :priority, "Filter by priority" %>
+
+    <%= form.select :priority, [["All priority", ""], ["Low", "low"], ["Medium", "medium"], ["High", "high"]], selected: @priority_filter %>
     <%= form.submit "Filter" %>
 <% end %>
 
